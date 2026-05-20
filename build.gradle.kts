@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "blueobjx"
-version = "1.0"
+version = "1.1"
 
 repositories {
     mavenCentral()
@@ -13,6 +13,12 @@ repositories {
 dependencies {
     implementation("info.picocli:picocli:4.7.7")
     implementation("org.hibernate:hibernate-core:5.6.15.Final")
+    testImplementation(platform("org.junit:junit-bom:5.10.2"))
+    testImplementation("org.junit.jupiter:junit-jupiter")
+}
+
+tasks.test {
+    useJUnitPlatform()
 }
 
 tasks.jar {
